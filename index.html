@@ -73,13 +73,36 @@
     </style>
   </head>
   <body class="bg-black text-green-400">
+    <!-- Language Selector -->
+    <div id="langSelectContainer" class="fixed top-4 right-4 z-[100] hidden">
+      <select id="langSelect" class="bg-gray-900 border border-green-700 text-green-400 text-sm rounded p-1 focus:outline-none">
+        <option value="en">English</option>
+        <option value="da">پښتو / دری (Afghanistan)</option>
+        <option value="km">ភាសាខ្មែរ (Cambodia)</option>
+        <option value="ar">العربية (Arabic)</option>
+        <option value="es">Español (Spanish)</option>
+      </select>
+    </div>
+
     <div id="main-content" class="min-h-screen flex flex-col items-center justify-center p-4">
-      <header class="text-center mb-12">
+      <header class="text-center mb-8">
         <h1 class="text-3xl md:text-5xl tracking-widest cursor-default">
           <span id="typing-text">AI PREDICTOR</span><span class="cursor"></span>
         </h1>
       </header>
-      <button id="openModalBtn" class="bg-transparent border-2 border-green-400 text-green-400 px-8 py-3 text-lg hover:bg-green-400 hover:text-black transition-all duration-300 active:scale-95 shadow-lg shadow-green-500/20 hover:shadow-green-500/40">
+      
+      <div id="language-selection-screen" class="w-full max-w-sm mb-8 z-[101]">
+        <h2 class="text-xl text-green-500 mb-6 tracking-widest text-center animate-pulse" data-i18n="select_language">// SELECT LANGUAGE //</h2>
+        <div class="grid grid-cols-1 gap-4">
+          <button class="main-lang-btn border border-green-700 bg-gray-900 hover:bg-green-600 hover:text-black text-green-400 py-4 rounded text-lg transition-all" data-lang="en">English</button>
+          <button class="main-lang-btn border border-green-700 bg-gray-900 hover:bg-green-600 hover:text-black text-green-400 py-4 rounded text-lg transition-all" data-lang="da">Afghanistan (پښتو / دری)</button>
+          <button class="main-lang-btn border border-green-700 bg-gray-900 hover:bg-green-600 hover:text-black text-green-400 py-4 rounded text-lg transition-all" data-lang="km">Cambodia (ភាសាខ្មែរ)</button>
+          <button class="main-lang-btn border border-green-700 bg-gray-900 hover:bg-green-600 hover:text-black text-green-400 py-4 rounded text-lg transition-all" data-lang="ar">Arabic (العربية)</button>
+          <button class="main-lang-btn border border-green-700 bg-gray-900 hover:bg-green-600 hover:text-black text-green-400 py-4 rounded text-lg transition-all" data-lang="es">Spanish (Español)</button>
+        </div>
+      </div>
+      
+      <button id="openModalBtn" data-i18n="get_signals" class="hidden bg-transparent border-2 border-green-400 text-green-400 px-8 py-3 text-lg hover:bg-green-400 hover:text-black transition-all duration-300 active:scale-95 shadow-lg shadow-green-500/20 hover:shadow-green-500/40">
         GET AI SIGNALS
       </button>
     </div>
@@ -100,19 +123,19 @@
       </div>
 
       <div id="live-feed-section" class="mb-8">
-        <h3 class="text-center text-xl mb-4 tracking-widest">// TOP WINNERS NOW //</h3>
+        <h3 class="text-center text-xl mb-4 tracking-widest" data-i18n="top_winners">// TOP WINNERS NOW //</h3>
         <div id="live-feed-container" class="h-24 bg-black/30 border border-green-800 rounded-md p-2 flex items-center space-x-4 overflow-x-hidden"></div>
       </div>
 
       <div id="signals-section" class="">
-        <h2 class="text-3xl md:text-4xl text-center mb-10 tracking-widest">// AVAILABLE AI SIGNALS //</h2>
+        <h2 class="text-3xl md:text-4xl text-center mb-10 tracking-widest" data-i18n="available_signals">// AVAILABLE AI SIGNALS //</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           <div class="signal-card bg-[#0d0d0d] border border-green-700 rounded-lg overflow-hidden flex flex-col" data-game="aviator">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqBdX8SuaC1Ws7ZYuCVQstQ4qRi9A_3SWujg&s" alt="Aviator" class="w-full h-48 object-cover"/>
             <div class="p-4 flex flex-col flex-grow text-center">
               <h3 class="text-lg font-bold mb-2 flex-grow">Aviator predictor</h3>
               <p id="stats-aviator" class="text-sm text-gray-400 mb-3 font-mono leading-tight">// Loading...</p>
-              <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300">ACTIVATE</button>
+              <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300" data-i18n="activate">ACTIVATE</button>
             </div>
           </div>
           <div class="signal-card bg-[#0d0d0d] border border-green-700 rounded-lg overflow-hidden flex flex-col" data-game="mines">
@@ -120,7 +143,7 @@
             <div class="p-4 flex flex-col flex-grow text-center">
               <h3 class="text-lg font-bold mb-2 flex-grow">Mines predictor</h3>
               <p id="stats-mines" class="text-sm text-gray-400 mb-3 font-mono leading-tight">// Loading...</p>
-              <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300">ACTIVATE</button>
+              <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300" data-i18n="activate">ACTIVATE</button>
             </div>
           </div>
           <div class="signal-card bg-[#0d0d0d] border border-green-700 rounded-lg overflow-hidden flex flex-col" data-game="penalty">
@@ -128,7 +151,7 @@
             <div class="p-4 flex flex-col flex-grow text-center">
               <h3 class="text-lg font-bold mb-2 flex-grow">Penalty predictor</h3>
               <p id="stats-penalty" class="text-sm text-gray-400 mb-3 font-mono leading-tight">// Loading...</p>
-              <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300">ACTIVATE</button>
+              <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300" data-i18n="activate">ACTIVATE</button>
             </div>
           </div>
           <div class="signal-card bg-[#0d0d0d] border border-green-700 rounded-lg overflow-hidden flex flex-col" data-game="apple">
@@ -136,7 +159,7 @@
             <div class="p-4 flex flex-col flex-grow text-center">
               <h3 class="text-lg font-bold mb-2 flex-grow">Apple predictor</h3>
               <p id="stats-apple" class="text-sm text-gray-400 mb-3 font-mono leading-tight">// Loading...</p>
-              <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300">ACTIVATE</button>
+              <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300" data-i18n="activate">ACTIVATE</button>
             </div>
           </div>
           <div class="signal-card bg-[#0d0d0d] border border-green-700 rounded-lg overflow-hidden flex flex-col" data-game="chicken">
@@ -144,7 +167,7 @@
             <div class="p-4 flex flex-col flex-grow text-center">
               <h3 class="text-lg font-bold mb-2 flex-grow">Chicken predictor</h3>
               <p id="stats-chicken" class="text-sm text-gray-400 mb-3 font-mono leading-tight">// Loading...</p>
-              <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300">ACTIVATE</button>
+              <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300" data-i18n="activate">ACTIVATE</button>
             </div>
           </div>
         </div>
@@ -157,8 +180,8 @@
           <h3 class="game-title text-3xl sm:text-4xl text-center mb-4">AVIATOR AI PREDICTOR</h3>
           <div class="mb-2 py-4"><p id="aviator-multiplier" class="text-7xl md:text-9xl font-mono text-center text-white transition-colors duration-500">x1.00</p></div>
           <p id="aviator-bet-suggestion" class="text-center text-yellow-400 h-8 my-4 text-sm sm:text-xl font-bold"></p>
-          <button id="aviator-get-signal-btn" class="w-full max-w-md bg-green-600 text-black hover:bg-green-500 px-6 py-3 text-lg transition-all duration-300 active:scale-95 rounded-md">Get Signal</button>
-          <button id="aviator-get-another-btn" class="hidden w-full max-w-md bg-yellow-500 text-black px-6 py-3 text-lg hover:bg-yellow-400 transition-all duration-300 active:scale-95 rounded-md mt-4">GET ANOTHER</button>
+          <button id="aviator-get-signal-btn" class="w-full max-w-md bg-green-600 text-black hover:bg-green-500 px-6 py-3 text-lg transition-all duration-300 active:scale-95 rounded-md" data-i18n="get_signal">Get Signal</button>
+          <button id="aviator-get-another-btn" class="hidden w-full max-w-md bg-yellow-500 text-black px-6 py-3 text-lg hover:bg-yellow-400 transition-all duration-300 active:scale-95 rounded-md mt-4" data-i18n="get_another">GET ANOTHER</button>
           <div id="aviator-console" class="game-console w-full max-w-md border rounded-md mt-6 p-2 font-mono text-xs overflow-y-auto"><div></div></div>
         </div>
 
@@ -184,8 +207,8 @@
           </div>
           <div id="mines-grid-container" class="w-full max-w-md aspect-square mb-6"></div>
           <p id="mines-bet-suggestion" class="text-center text-yellow-400 h-8 my-4 text-sm sm:text-xl font-bold"></p>
-          <button id="mines-get-signal-btn" class="w-full max-w-md bg-green-600 text-black hover:bg-green-500 px-6 py-3 text-lg transition-all duration-300 rounded-md">Get Signal</button>
-          <button id="mines-get-another-btn" class="hidden w-full max-w-md bg-yellow-500 text-black px-6 py-3 mt-4 text-lg rounded-md">GET ANOTHER</button>
+          <button id="mines-get-signal-btn" class="w-full max-w-md bg-green-600 text-black hover:bg-green-500 px-6 py-3 text-lg transition-all duration-300 rounded-md" data-i18n="get_signal">Get Signal</button>
+          <button id="mines-get-another-btn" class="hidden w-full max-w-md bg-yellow-500 text-black px-6 py-3 mt-4 text-lg rounded-md" data-i18n="get_another">GET ANOTHER</button>
           <div id="mines-console" class="game-console w-full max-w-md border rounded-md mt-6 p-2 font-mono text-xs overflow-y-auto"><div></div></div>
         </div>
 
@@ -201,8 +224,8 @@
             <div data-zone="5" class="penalty-target-zone absolute bottom-4 right-4 w-16 h-16 rounded-full"></div>
           </div>
           <p id="penalty-bet-suggestion" class="text-center text-yellow-400 h-8 my-4 text-sm font-bold"></p>
-          <button id="penalty-get-signal-btn" class="w-full max-w-md bg-green-600 text-black hover:bg-green-500 px-6 py-3 rounded-md">Get Signal</button>
-          <button id="penalty-start-new-game-btn" class="hidden w-full max-w-md bg-yellow-500 text-black px-6 py-3 mt-4 rounded-md">Next</button>
+          <button id="penalty-get-signal-btn" class="w-full max-w-md bg-green-600 text-black hover:bg-green-500 px-6 py-3 rounded-md" data-i18n="get_signal">Get Signal</button>
+          <button id="penalty-start-new-game-btn" class="hidden w-full max-w-md bg-yellow-500 text-black px-6 py-3 mt-4 rounded-md" data-i18n="next">Next</button>
           <div id="penalty-console" class="game-console w-full max-w-md border rounded-md mt-6 p-2 font-mono text-xs overflow-y-auto"><div></div></div>
         </div>
 
@@ -212,8 +235,8 @@
           <h3 class="game-title text-3xl mb-4 mt-8">APPLE PREDICTOR</h3>
           <div class="flex-grow flex items-center justify-center my-6"><p id="apple-signal-display" class="text-9xl font-mono text-white">#</p></div>
           <p id="apple-bet-suggestion" class="text-center text-yellow-400 h-8 font-bold mb-4"></p>
-          <button id="apple-get-signal-btn" class="w-full max-w-md bg-green-600 text-black py-3 rounded-md">Get Signal</button>
-          <button id="apple-start-new-game-btn" class="hidden w-full max-w-md bg-yellow-500 py-3 mt-4 rounded-md">Next</button>
+          <button id="apple-get-signal-btn" class="w-full max-w-md bg-green-600 text-black py-3 rounded-md" data-i18n="get_signal">Get Signal</button>
+          <button id="apple-start-new-game-btn" class="hidden w-full max-w-md bg-yellow-500 py-3 mt-4 rounded-md" data-i18n="next">Next</button>
           <div id="apple-console" class="game-console w-full max-w-md border mt-6 p-2 overflow-y-auto"><div></div></div>
         </div>
 
@@ -226,8 +249,8 @@
             <img id="chicken-icon" src="https://iili.io/FvIoXhg.webp" class="absolute h-16 w-16 top-1/2" alt="Chicken"/>
           </div>
           <p id="chicken-bet-suggestion" class="text-center text-yellow-400 h-8 font-bold mb-4"></p>
-          <button id="chicken-get-signal-btn" class="w-full max-w-md bg-green-600 text-black py-3 rounded-md">Get Signal</button>
-          <button id="chicken-get-another-btn" class="hidden w-full max-w-md bg-yellow-500 py-3 mt-4 rounded-md">Next</button>
+          <button id="chicken-get-signal-btn" class="w-full max-w-md bg-green-600 text-black py-3 rounded-md" data-i18n="get_signal">Get Signal</button>
+          <button id="chicken-get-another-btn" class="hidden w-full max-w-md bg-yellow-500 py-3 mt-4 rounded-md" data-i18n="next">Next</button>
           <div id="chicken-console" class="game-console w-full max-w-md border mt-6 p-2 overflow-y-auto"><div></div></div>
         </div>
       </div>
@@ -239,10 +262,10 @@
     <div id="accessModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden z-50">
       <div id="modalContainer" class="bg-[#0d0d0d] border border-green-500 rounded-lg p-6 w-full max-w-sm text-center">
         <div id="formContent">
-          <p class="blinking-red text-sm mb-4">// Enter Daily Code //</p>
-          <input type="text" id="accessCode" class="hacker-input w-full bg-gray-900 border border-green-600 text-green-300 rounded p-3 text-center mb-2" placeholder="Access code"/>
+          <p class="blinking-red text-sm mb-4" data-i18n="daily_code">// Enter Daily Code //</p>
+          <input type="text" id="accessCode" class="hacker-input w-full bg-gray-900 border border-green-600 text-green-300 rounded p-3 text-center mb-2" placeholder="Access code" data-i18n-placeholder="access_placeholder"/>
           <p id="errorMessage" class="text-red-500 h-5 mt-2 text-sm"></p>
-          <button id="validateBtn" class="mt-4 w-full bg-green-600 text-black py-2 hover:bg-green-500">VALIDATE</button>
+          <button id="validateBtn" class="mt-4 w-full bg-green-600 text-black py-2 hover:bg-green-500" data-i18n="validate">VALIDATE</button>
         </div>
         <div id="statusContent" class="hidden h-36 flex items-center justify-center"><p id="statusText" class="text-2xl animate-pulse"></p></div>
       </div>
@@ -261,17 +284,17 @@
       <div class="bg-[#0d0d0d] border border-red-500 rounded-lg p-6 md:p-8 w-full max-w-md relative shadow-[0_0_30px_rgba(239,68,68,0.3)] text-center">
         <button id="closeDepositModalBtn" class="absolute top-2 right-3 text-gray-500 hover:text-red-400 text-4xl leading-none transition-colors">&times;</button>
         <div class="blinking-red text-5xl mb-4"><i class="fas fa-exclamation-triangle"></i></div>
-        <h2 class="text-2xl text-red-500 mb-4 font-bold tracking-widest">// API SYNC LOST //</h2>
+        <h2 class="text-2xl text-red-500 mb-4 font-bold tracking-widest" data-i18n="deposit_title">// API SYNC LOST //</h2>
         <p class="text-gray-300 mb-6 text-sm">
           To maintain AI synchronization and continue receiving 98%+ accurate signals for <span class="text-white font-bold">1xBet</span>, a new deposit on your existing account is required to refresh session tokens.
         </p>
         <a href="https://indi-1xbet.com/en/office/recharge" target="_blank" class="block w-full bg-blue-600 text-white font-bold px-6 py-4 rounded hover:bg-blue-500 transition-all active:scale-95 mb-6 shadow-[0_0_15px_rgba(37,99,235,0.5)]">
-          <i class="fas fa-coins mr-2"></i> DEPOSIT ON 1XBET
+          <i class="fas fa-coins mr-2"></i> <span data-i18n="deposit_btn">DEPOSIT ON 1XBET</span>
         </a>
         <div class="border-t border-gray-800 pt-6">
-          <label class="block text-sm text-gray-400 mb-2">Message Admin to get Access Code after deposit:</label>
+          <label class="block text-sm text-gray-400 mb-2" data-i18n="verify_msg">Message Admin to get Access Code after deposit:</label>
           <input type="text" id="txIdInput" class="hacker-input w-full bg-gray-900 border border-gray-700 text-green-300 rounded p-3 text-center focus:outline-none mb-3" placeholder="Enter Access Code">
-          <button id="verifyDepositBtn" class="w-full bg-green-700 text-black font-bold px-6 py-3 hover:bg-green-600 transition-all active:scale-95 rounded">
+          <button id="verifyDepositBtn" class="w-full bg-green-700 text-black font-bold px-6 py-3 hover:bg-green-600 transition-all active:scale-95 rounded" data-i18n="verify_btn">
             VERIFY ACCESS CODE
           </button>
           <p id="depositStatus" class="font-mono text-sm mt-3 h-4"></p>
@@ -280,6 +303,142 @@
     </div>
 
     <script>
+      const i18n = {
+        en: {
+          select_language: "// SELECT LANGUAGE //",
+          app_title: "AI PREDICTOR",
+          get_signals: "GET AI SIGNALS",
+          top_winners: "// TOP WINNERS NOW //",
+          available_signals: "// AVAILABLE AI SIGNALS //",
+          activate: "ACTIVATE",
+          daily_code: "// Enter Daily Code //",
+          validate: "VALIDATE",
+          get_signal: "Get Signal",
+          get_another: "GET ANOTHER",
+          next: "Next",
+          deposit_title: "// API SYNC LOST //",
+          deposit_btn: "DEPOSIT ON 1XBET",
+          verify_msg: "Message Admin to get Access Code after deposit:",
+          verify_btn: "VERIFY ACCESS CODE",
+          access_placeholder: "Access code"
+        },
+        es: {
+          select_language: "// SELECCIONAR IDIOMA //",
+          app_title: "PREDICTOR IA",
+          get_signals: "OBTENER SEÑALES",
+          top_winners: "// GANADORES AHORA //",
+          available_signals: "// SEÑALES DISPONIBLES //",
+          activate: "ACTIVAR",
+          daily_code: "// Ingrese el Código Diario //",
+          validate: "VALIDAR",
+          get_signal: "Obtener Señal",
+          get_another: "OTRA SEÑAL",
+          next: "Siguiente",
+          deposit_title: "// SINCRONIZACIÓN PERDIDA //",
+          deposit_btn: "DEPOSITAR EN 1XBET",
+          verify_msg: "Mensaje al Admin para el Código tras el depósito:",
+          verify_btn: "VERIFICAR CÓDIGO",
+          access_placeholder: "Código de acceso"
+        },
+        ar: {
+          select_language: "// اختر اللغة //",
+          app_title: "متنبئ الذكاء الاصطناعي",
+          get_signals: "احصل على الإشارات",
+          top_winners: "// كبار الفائزين الآن //",
+          available_signals: "// الإشارات المتاحة //",
+          activate: "تفعيل",
+          daily_code: "// أدخل الرمز اليومي //",
+          validate: "تحقق",
+          get_signal: "احصل على إشارة",
+          get_another: "إشارة أخرى",
+          next: "التالي",
+          deposit_title: "// فقدت المزامنة //",
+          deposit_btn: "إيداع في 1XBET",
+          verify_msg: "راسل المسؤول للحصول على الرمز بعد الإيداع:",
+          verify_btn: "تحقق من الرمز",
+          access_placeholder: "رمز الدخول"
+        },
+        da: {
+          select_language: "// ژبه غوره کړئ //",
+          app_title: "پیش‌بینی کننده هوش مصنوعی",
+          get_signals: "دریافت سیگنال ها",
+          top_winners: "// برندگان برتر //",
+          available_signals: "// سیگنال های موجود //",
+          activate: "فعال کردن",
+          daily_code: "// کد روزانه خود را وارد کنید //",
+          validate: "تایید",
+          get_signal: "دریافت سیگنال",
+          get_another: "دریافت یکی دیگر",
+          next: "بعدی",
+          deposit_title: "// همگام سازی قطع شد //",
+          deposit_btn: "واریز در 1XBET",
+          verify_msg: "پیام به مدیر برای کد بعد از واریز:",
+          verify_btn: "تایید کد عبور",
+          access_placeholder: "کد عبور"
+        },
+        km: {
+          select_language: "// ជ្រើសរើសភាសា //",
+          app_title: "អ្នកទស្សន៍ទាយ AI",
+          get_signals: "ទទួលសញ្ញា AI",
+          top_winners: "// អ្នកឈ្នះកំពូលឥឡូវនេះ //",
+          available_signals: "// សញ្ញា AI ដែលមាន //",
+          activate: "ដំណើរការ",
+          daily_code: "// បញ្ចូលលេខកូដប្រចាំថ្ងៃ //",
+          validate: "បញ្ជាក់",
+          get_signal: "ទទួលសញ្ញា",
+          get_another: "ទទួលមួយទៀត",
+          next: "បន្ទាប់",
+          deposit_title: "// បាត់បង់ការធ្វើសមកាលកម្ម API //",
+          deposit_btn: "ដាក់ប្រាក់នៅ 1XBET",
+          verify_msg: "ផ្ញើសារទៅ Admin ដើម្បីទទួលបានលេខកូដបន្ទាប់ពីដាក់ប្រាក់:",
+          verify_btn: "ផ្ទៀងផ្ទាត់លេខកូដ",
+          access_placeholder: "លេខកូដចូល"
+        }
+      };
+
+      const langSelect = document.getElementById('langSelect');
+      langSelect.addEventListener('change', (e) => {
+        const lang = e.target.value;
+        const bodyStr = lang === 'ar' || lang === 'da' ? 'rtl' : 'ltr';
+        document.body.dir = bodyStr;
+        localStorage.setItem('ai_app_lang', lang);
+        applyLanguage(lang);
+      });
+
+      function applyLanguage(lang) {
+        if (!i18n[lang]) return;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (i18n[lang][key]) {
+            el.innerHTML = i18n[lang][key];
+          }
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (i18n[lang][key]) {
+            el.setAttribute('placeholder', i18n[lang][key]);
+          }
+        });
+      }
+
+      const savedLang = localStorage.getItem('ai_app_lang') || 'en';
+      langSelect.value = savedLang;
+      langSelect.dispatchEvent(new Event('change'));
+
+      const languageSelectionScreen = document.getElementById('language-selection-screen');
+      const openModalBtn = document.getElementById('openModalBtn');
+
+      document.querySelectorAll('.main-lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const lang = e.currentTarget.getAttribute('data-lang');
+          langSelect.value = lang;
+          langSelect.dispatchEvent(new Event('change'));
+          
+          languageSelectionScreen.classList.add('hidden');
+          openModalBtn.classList.remove('hidden');
+        });
+      });
+
       const mainContent = document.getElementById("main-content");
       const appContainer = document.getElementById("app-container");
       const signalsSection = document.getElementById("signals-section");
@@ -544,6 +703,7 @@
                   document.getElementById('accessModal').classList.add('hidden');
                   mainContent.classList.add('hidden');
                   appContainer.classList.remove('hidden');
+                  document.getElementById('langSelectContainer').classList.remove('hidden');
               }, 1000);
           } else {
               document.getElementById("errorMessage").textContent = "Invalid code";
