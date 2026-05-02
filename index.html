@@ -110,12 +110,12 @@
     <div id="app-container" class="hidden min-h-screen container mx-auto p-4 md:p-8">
       <div class="w-full bg-gray-900 border border-green-700/50 rounded p-2 mb-4 flex justify-between items-center text-[10px] sm:text-xs font-mono shadow-[0_0_15px_rgba(57,255,20,0.1)]">
         <div class="flex items-center gap-1 sm:gap-2"><span class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 animate-pulse"></span> <span class="hidden sm:inline">API:</span> SECURE</div>
-        <div class="text-yellow-500 font-bold tracking-widest"><i class="fas fa-fire mr-1 text-orange-500"></i>STREAK: <span id="global-streak">0</span> WINS</div>
-        <div class="flex items-center gap-1 sm:gap-2">PING: <span id="ping-value" class="text-green-400">12</span>ms</div>
+        <div class="text-yellow-500 font-bold tracking-widest"><i class="fas fa-fire mr-1 text-orange-500"></i><span data-i18n="streak">STREAK:</span> <span id="global-streak">0</span> <span data-i18n="wins">WINS</span></div>
+        <div class="flex items-center gap-1 sm:gap-2"><span data-i18n="ping">PING:</span> <span id="ping-value" class="text-green-400">12</span>ms</div>
       </div>
       <div class="w-full flex justify-end items-center gap-4 mb-4">
         <button id="admin-panel-btn" class="hidden bg-yellow-600 text-white px-4 py-2 text-sm rounded-md hover:bg-yellow-500 transition-colors active:scale-95">
-          <i class="fas fa-user-shield mr-2"></i>Admin Panel
+          <i class="fas fa-user-shield mr-2"></i><span data-i18n="admin_panel">Admin Panel</span>
         </button>
         <button id="logoutBtn" class="bg-red-600 text-white px-4 py-2 text-sm rounded-md hover:bg-red-500 transition-colors active:scale-95">
           <i class="fas fa-sign-out-alt mr-2"></i>Logout
@@ -133,40 +133,40 @@
           <div class="signal-card bg-[#0d0d0d] border border-green-700 rounded-lg overflow-hidden flex flex-col" data-game="aviator">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqBdX8SuaC1Ws7ZYuCVQstQ4qRi9A_3SWujg&s" alt="Aviator" class="w-full h-48 object-cover"/>
             <div class="p-4 flex flex-col flex-grow text-center">
-              <h3 class="text-lg font-bold mb-2 flex-grow">Aviator predictor</h3>
-              <p id="stats-aviator" class="text-sm text-gray-400 mb-3 font-mono leading-tight">// Loading...</p>
+              <h3 class="text-lg font-bold mb-2 flex-grow" data-i18n="game_aviator">Aviator predictor</h3>
+              <p id="stats-aviator" class="text-sm text-gray-400 mb-3 font-mono leading-tight" data-i18n="loading">// Loading...</p>
               <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300" data-i18n="activate">ACTIVATE</button>
             </div>
           </div>
           <div class="signal-card bg-[#0d0d0d] border border-green-700 rounded-lg overflow-hidden flex flex-col" data-game="mines">
             <img src="https://rotativka.com/en/wp-content/uploads/sites/3/2021/06/Mines-Demo.jpg" alt="Mines" class="w-full h-48 object-cover"/>
             <div class="p-4 flex flex-col flex-grow text-center">
-              <h3 class="text-lg font-bold mb-2 flex-grow">Mines predictor</h3>
-              <p id="stats-mines" class="text-sm text-gray-400 mb-3 font-mono leading-tight">// Loading...</p>
+              <h3 class="text-lg font-bold mb-2 flex-grow" data-i18n="game_mines">Mines predictor</h3>
+              <p id="stats-mines" class="text-sm text-gray-400 mb-3 font-mono leading-tight" data-i18n="loading">// Loading...</p>
               <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300" data-i18n="activate">ACTIVATE</button>
             </div>
           </div>
           <div class="signal-card bg-[#0d0d0d] border border-green-700 rounded-lg overflow-hidden flex flex-col" data-game="penalty">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThYP5CGxc52hWd4ToMHI8MIJhun5BEjHh5LQ&s" alt="Penalty" class="w-full h-48 object-cover"/>
             <div class="p-4 flex flex-col flex-grow text-center">
-              <h3 class="text-lg font-bold mb-2 flex-grow">Penalty predictor</h3>
-              <p id="stats-penalty" class="text-sm text-gray-400 mb-3 font-mono leading-tight">// Loading...</p>
+              <h3 class="text-lg font-bold mb-2 flex-grow" data-i18n="game_penalty">Penalty predictor</h3>
+              <p id="stats-penalty" class="text-sm text-gray-400 mb-3 font-mono leading-tight" data-i18n="loading">// Loading...</p>
               <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300" data-i18n="activate">ACTIVATE</button>
             </div>
           </div>
           <div class="signal-card bg-[#0d0d0d] border border-green-700 rounded-lg overflow-hidden flex flex-col" data-game="apple">
             <img src="https://play-lh.googleusercontent.com/ezAY-TvV3PlhYWLs8k8czRjWWSdBwFtPrw72fNpS8p6wByC0xBG-Dgt0K5ojieZXrg" alt="Apple" class="w-full h-48 object-cover"/>
             <div class="p-4 flex flex-col flex-grow text-center">
-              <h3 class="text-lg font-bold mb-2 flex-grow">Apple predictor</h3>
-              <p id="stats-apple" class="text-sm text-gray-400 mb-3 font-mono leading-tight">// Loading...</p>
+              <h3 class="text-lg font-bold mb-2 flex-grow" data-i18n="game_apple">Apple predictor</h3>
+              <p id="stats-apple" class="text-sm text-gray-400 mb-3 font-mono leading-tight" data-i18n="loading">// Loading...</p>
               <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300" data-i18n="activate">ACTIVATE</button>
             </div>
           </div>
           <div class="signal-card bg-[#0d0d0d] border border-green-700 rounded-lg overflow-hidden flex flex-col" data-game="chicken">
             <img src="https://cdn6.aptoide.com/imgs/1/0/2/1023a04c18a7a91673200703af12a58f_icon.png" alt="Chicken" class="w-full h-48 object-cover"/>
             <div class="p-4 flex flex-col flex-grow text-center">
-              <h3 class="text-lg font-bold mb-2 flex-grow">Chicken predictor</h3>
-              <p id="stats-chicken" class="text-sm text-gray-400 mb-3 font-mono leading-tight">// Loading...</p>
+              <h3 class="text-lg font-bold mb-2 flex-grow" data-i18n="game_chicken">Chicken predictor</h3>
+              <p id="stats-chicken" class="text-sm text-gray-400 mb-3 font-mono leading-tight" data-i18n="loading">// Loading...</p>
               <button class="activate-btn w-full mt-auto bg-green-600 text-black px-4 py-2 hover:bg-green-500 transition-all duration-300" data-i18n="activate">ACTIVATE</button>
             </div>
           </div>
@@ -177,7 +177,7 @@
         <!-- AVIATOR -->
         <div id="game-screen-aviator" class="game-screen hidden relative min-h-[60vh] flex flex-col items-center justify-center bg-black/30 border border-green-800 rounded-md p-4 pt-16 pb-8">
           <button class="back-to-signals-btn absolute top-4 right-4 text-gray-400 hover:text-white transition-colors text-4xl leading-none">&times;</button>
-          <h3 class="game-title text-3xl sm:text-4xl text-center mb-4">AVIATOR AI PREDICTOR</h3>
+          <h3 class="game-title text-3xl sm:text-4xl text-center mb-4" data-i18n="title_aviator">AVIATOR AI PREDICTOR</h3>
           <div class="mb-2 py-4"><p id="aviator-multiplier" class="text-7xl md:text-9xl font-mono text-center text-white transition-colors duration-500">x1.00</p></div>
           <p id="aviator-bet-suggestion" class="text-center text-yellow-400 h-8 my-4 text-sm sm:text-xl font-bold"></p>
           <button id="aviator-get-signal-btn" class="w-full max-w-md bg-green-600 text-black hover:bg-green-500 px-6 py-3 text-lg transition-all duration-300 active:scale-95 rounded-md" data-i18n="get_signal">Get Signal</button>
@@ -188,17 +188,17 @@
         <!-- MINES -->
         <div id="game-screen-mines" class="game-screen hidden relative min-h-[60vh] flex flex-col items-center justify-center bg-black/30 border border-green-800 rounded-md p-4 pt-16 pb-8">
           <button class="back-to-signals-btn absolute top-4 right-4 text-gray-400 hover:text-white transition-colors text-4xl leading-none">&times;</button>
-          <h3 class="game-title text-3xl sm:text-4xl text-center mb-6">MINES AI PREDICTOR</h3>
+          <h3 class="game-title text-3xl sm:text-4xl text-center mb-6" data-i18n="title_mines">MINES AI PREDICTOR</h3>
           <div class="flex flex-col sm:flex-row gap-6 mb-6 w-full max-w-lg">
             <div class="relative flex-1" data-select-id="grid-size">
-              <label class="block text-sm text-gray-400 mb-1">Grid Size</label>
+              <label class="block text-sm text-gray-400 mb-1" data-i18n="grid_size">Grid Size</label>
               <button class="custom-select-trigger w-full bg-gray-900 border border-green-700 rounded p-3 flex justify-between"><span class="selected-option">5x5</span></button>
               <div class="custom-select-options hidden absolute top-full mt-1 bg-gray-900 border border-green-700 rounded-md z-10 overflow-hidden w-full">
                 <div class="p-2 cursor-pointer hover:bg-green-800">5x5</div>
               </div>
             </div>
             <div class="relative flex-1" data-select-id="mine-count">
-              <label class="block text-sm text-gray-400 mb-1">Mine Count</label>
+              <label class="block text-sm text-gray-400 mb-1" data-i18n="mine_count_label">Mine Count</label>
               <button class="custom-select-trigger w-full bg-gray-900 border border-green-700 rounded p-3 flex justify-between"><span class="selected-option">3</span></button>
               <div class="custom-select-options hidden absolute top-full mt-1 bg-gray-900 border border-green-700 rounded-md z-10 w-full">
                 <div class="p-2 cursor-pointer hover:bg-green-800">3</div>
@@ -215,7 +215,7 @@
         <!-- PENALTY -->
         <div id="game-screen-penalty" class="game-screen hidden relative min-h-[60vh] flex flex-col items-center justify-center bg-black/30 border border-green-800 rounded-md p-4 pt-16 pb-8">
           <button class="back-to-signals-btn absolute top-4 right-4 text-gray-400 hover:text-white transition-colors text-4xl leading-none">&times;</button>
-          <h3 class="game-title text-3xl sm:text-4xl text-center mb-6">PENALTY PREDICTOR</h3>
+          <h3 class="game-title text-3xl sm:text-4xl text-center mb-6" data-i18n="title_penalty">PENALTY PREDICTOR</h3>
           <div class="relative w-full max-w-lg h-64 md:h-80 bg-gray-900/20 border-2 border-gray-600 mb-6">
             <div data-zone="1" class="penalty-target-zone absolute top-4 left-4 w-16 h-16 rounded-full"></div>
             <div data-zone="2" class="penalty-target-zone absolute top-4 right-4 w-16 h-16 rounded-full"></div>
@@ -232,7 +232,7 @@
         <!-- APPLE -->
         <div id="game-screen-apple" class="game-screen hidden relative min-h-[60vh] flex flex-col items-center justify-center bg-black/30 border border-green-800 rounded-md p-4">
           <button class="back-to-signals-btn absolute top-4 right-4 text-gray-400 hover:text-white transition-colors text-4xl leading-none">&times;</button>
-          <h3 class="game-title text-3xl mb-4 mt-8">APPLE PREDICTOR</h3>
+          <h3 class="game-title text-3xl mb-4 mt-8" data-i18n="title_apple">APPLE PREDICTOR</h3>
           <div class="flex-grow flex items-center justify-center my-6"><p id="apple-signal-display" class="text-9xl font-mono text-white">#</p></div>
           <p id="apple-bet-suggestion" class="text-center text-yellow-400 h-8 font-bold mb-4"></p>
           <button id="apple-get-signal-btn" class="w-full max-w-md bg-green-600 text-black py-3 rounded-md" data-i18n="get_signal">Get Signal</button>
@@ -243,7 +243,7 @@
         <!-- CHICKEN -->
         <div id="game-screen-chicken" class="game-screen hidden relative min-h-[60vh] flex flex-col items-center justify-center bg-black/30 border border-green-800 rounded-md p-4">
           <button class="back-to-signals-btn absolute top-4 right-4 text-gray-400 hover:text-white transition-colors text-4xl leading-none">&times;</button>
-          <h3 class="game-title text-3xl mb-4 mt-8">CHICKEN STRAT</h3>
+          <h3 class="game-title text-3xl mb-4 mt-8" data-i18n="title_chicken">CHICKEN STRAT</h3>
           <div id="chicken-road-viewport" class="w-full h-24 relative rounded-md border-y-4 border-gray-500 mb-4 max-w-md mx-auto">
             <div id="chicken-road-track" class="h-full relative flex items-center"></div>
             <img id="chicken-icon" src="https://iili.io/FvIoXhg.webp" class="absolute h-16 w-16 top-1/2" alt="Chicken"/>
@@ -273,11 +273,11 @@
 
     <div id="scanningOverlay" class="fixed inset-0 bg-black/95 backdrop-blur-sm z-[60] hidden flex flex-col items-center justify-center font-mono">
       <div class="text-green-500 text-6xl mb-6"><i class="fas fa-satellite-dish animate-pulse"></i></div>
-      <h2 class="text-xl sm:text-2xl text-green-400 mb-2 tracking-widest text-center">// INTERCEPTING 1XBET API //</h2>
+      <h2 class="text-xl sm:text-2xl text-green-400 mb-2 tracking-widest text-center" data-i18n="intercepting">// INTERCEPTING 1XBET API //</h2>
       <div class="w-64 h-4 border border-green-500 p-0.5 mb-4 relative drop-shadow-[0_0_8px_rgba(57,255,20,0.8)]">
           <div id="scanProgressBar" class="h-full bg-green-500 w-0 transition-all duration-100"></div>
       </div>
-      <p id="scanStatus" class="text-sm text-gray-400 text-center">Bypassing firewall...</p>
+      <p id="scanStatus" class="text-sm text-gray-400 text-center" data-i18n="scan_status_init">Bypassing firewall...</p>
     </div>
 
     <div id="depositModal" class="fixed inset-0 bg-black/95 backdrop-blur-md z-[100] flex items-center justify-center p-4 hidden">
@@ -320,7 +320,42 @@
           deposit_btn: "DEPOSIT ON 1XBET",
           verify_msg: "Message Admin to get Access Code after deposit:",
           verify_btn: "VERIFY ACCESS CODE",
-          access_placeholder: "Access code"
+          access_placeholder: "Access code",
+          streak: "STREAK:",
+          wins: "WINS",
+          ping: "PING:",
+          admin_panel: "Admin Panel",
+          game_aviator: "Aviator predictor",
+          game_mines: "Mines predictor",
+          game_penalty: "Penalty predictor",
+          game_apple: "Apple predictor",
+          game_chicken: "Chicken predictor",
+          title_aviator: "AVIATOR AI PREDICTOR",
+          title_mines: "MINES AI PREDICTOR",
+          title_penalty: "PENALTY PREDICTOR",
+          title_apple: "APPLE PREDICTOR",
+          title_chicken: "CHICKEN STRAT",
+          grid_size: "Grid Size",
+          mine_count_label: "Mine Count",
+          intercepting: "// INTERCEPTING 1XBET API //",
+          scan_status_init: "Bypassing firewall...",
+          confidence: "Confidence",
+          expires_in: "Expires in",
+          signal_expired: "// SIGNAL EXPIRED //",
+          window_closed: "The vulnerability window closed.",
+          step_1: "Establishing secure port tunnel...",
+          step_2: "Intercepting live game hashes...",
+          step_3: "Applying neural network logic...",
+          step_4: "Signal successfully cracked!",
+          scan_success: "> ✅ SUCCESS: Vulnerability exploited. Signal Acquired.",
+          signal_aviator: "Signal: Cash out at",
+          signal_mines_safe: "5 Safe Cells Revealed",
+          signal_penalty_zone: "Target Zone",
+          signal_apple_col: "Select column",
+          signal_chicken_pick: "Safely pick",
+          signal_chicken_times: "times",
+          ai_signal: "AI Signal:",
+          loading: "// Loading..."
         },
         es: {
           select_language: "// SELECCIONAR IDIOMA //",
@@ -338,7 +373,42 @@
           deposit_btn: "DEPOSITAR EN 1XBET",
           verify_msg: "Mensaje al Admin para el Código tras el depósito:",
           verify_btn: "VERIFICAR CÓDIGO",
-          access_placeholder: "Código de acceso"
+          access_placeholder: "Código de acceso",
+          streak: "RACHA:",
+          wins: "VICS",
+          ping: "PING:",
+          admin_panel: "Panel Admin",
+          game_aviator: "Predictor Aviator",
+          game_mines: "Predictor Mines",
+          game_penalty: "Predictor Penalty",
+          game_apple: "Predictor Apple",
+          game_chicken: "Predictor Chicken",
+          title_aviator: "PREDICTOR IA AVIATOR",
+          title_mines: "PREDICTOR IA MINES",
+          title_penalty: "PREDICTOR PENALTY",
+          title_apple: "PREDICTOR APPLE",
+          title_chicken: "ESTRATEGIA CHICKEN",
+          grid_size: "Tamaño",
+          mine_count_label: "Nro de Minas",
+          intercepting: "// INTERCEPTANDO API 1XBET //",
+          scan_status_init: "Evadiendo firewall...",
+          confidence: "Confianza",
+          expires_in: "Expira en",
+          signal_expired: "// SEÑAL EXPIRADA //",
+          window_closed: "La ventana de vulnerabilidad se cerró.",
+          step_1: "Estableciendo túnel seguro...",
+          step_2: "Interceptando hashes en vivo...",
+          step_3: "Aplicando lógica neuronal...",
+          step_4: "¡Señal descifrada con éxito!",
+          scan_success: "> ✅ ÉXITO: Vulnerabilidad explotada. Señal Adquirida.",
+          signal_aviator: "Señal: Retira en",
+          signal_mines_safe: "5 Celdas Seguras Reveladas",
+          signal_penalty_zone: "Zona Objetivo",
+          signal_apple_col: "Selec. columna",
+          signal_chicken_pick: "Elige seguro",
+          signal_chicken_times: "veces",
+          ai_signal: "Señal IA:",
+          loading: "// Cargando..."
         },
         ar: {
           select_language: "// اختر اللغة //",
@@ -356,7 +426,42 @@
           deposit_btn: "إيداع في 1XBET",
           verify_msg: "راسل المسؤول للحصول على الرمز بعد الإيداع:",
           verify_btn: "تحقق من الرمز",
-          access_placeholder: "رمز الدخول"
+          access_placeholder: "رمز الدخول",
+          streak: "سلسلة الفوز:",
+          wins: "انتصارات",
+          ping: "بينج:",
+          admin_panel: "لوحة تحكم",
+          game_aviator: "توقع Aviator",
+          game_mines: "توقع Mines",
+          game_penalty: "توقع Penalty",
+          game_apple: "توقع Apple",
+          game_chicken: "توقع Chicken",
+          title_aviator: "توقع ذكاء اصطناعي لـ AVIATOR",
+          title_mines: "توقع ذكاء اصطناعي لـ MINES",
+          title_penalty: "توقع PENALTY",
+          title_apple: "توقع APPLE",
+          title_chicken: "تكتيك CHICKEN",
+          grid_size: "حجم الشبكة",
+          mine_count_label: "عدد الألغام",
+          intercepting: "// جاري اعتراض 1XBET //",
+          scan_status_init: "تجاوز جدار الحماية...",
+          confidence: "الثقة",
+          expires_in: "ينتهي في",
+          signal_expired: "// الإشارة منتهية הצلاحية //",
+          window_closed: "تم إغلاق نافذة الثغرة.",
+          step_1: "تأسيس قناة آمنة...",
+          step_2: "اعتراض الهاش المباشر...",
+          step_3: "تطبيق الشبكة العصبية...",
+          step_4: "تم فك تشفير الإشارة!",
+          scan_success: "> ✅ نجاح: تم اختراق الثغرة. تم الحصول على الإشارة.",
+          signal_aviator: "إشارة: اسحب عند",
+          signal_mines_safe: "تم كشف 5 خلايا بأمان",
+          signal_penalty_zone: "منطقة الهدف",
+          signal_apple_col: "حدد العمود",
+          signal_chicken_pick: "اختر بأمان",
+          signal_chicken_times: "مرات",
+          ai_signal: "إشارة ذكاء اصطناعي:",
+          loading: "// جاري التحميل..."
         },
         da: {
           select_language: "// ژبه غوره کړئ //",
@@ -374,7 +479,42 @@
           deposit_btn: "واریز در 1XBET",
           verify_msg: "پیام به مدیر برای کد بعد از واریز:",
           verify_btn: "تایید کد عبور",
-          access_placeholder: "کد عبور"
+          access_placeholder: "کد عبور",
+          streak: "برد پیاپی:",
+          wins: "بردها",
+          ping: "پینگ:",
+          admin_panel: "پنل ادمین",
+          game_aviator: "پیش‌بینی Aviator",
+          game_mines: "پیش‌بینی Mines",
+          game_penalty: "پیش‌بینی Penalty",
+          game_apple: "پیش‌بینی Apple",
+          game_chicken: "پیش‌بینی Chicken",
+          title_aviator: "پیش‌بینی گر هوش مصنوعی AVIATOR",
+          title_mines: "پیش‌بینی گر هوش مصنوعی MINES",
+          title_penalty: "پیش‌بینی PENALTY",
+          title_apple: "پیش‌بینی APPLE",
+          title_chicken: "استراتژی CHICKEN",
+          grid_size: "اندازه شبکه",
+          mine_count_label: "تعداد مین ها",
+          intercepting: "// در حال رهگیری 1XBET //",
+          scan_status_init: "دور زدن فایروال...",
+          confidence: "اطمینان",
+          expires_in: "انقضا در",
+          signal_expired: "// سیگنال منقضی شد //",
+          window_closed: "پنجره آسیب‌پذیری بسته شد.",
+          step_1: "ایجاد ارتباط امن...",
+          step_2: "رهگیری هش مستقیم...",
+          step_3: "اعمال شبکه عصبی...",
+          step_4: "سیگنال با موفقیت رمزگشایی شد!",
+          scan_success: "> ✅ موفقیت: نفوذ انجام شد. سیگنال دریافت شد.",
+          signal_aviator: "سیگنال: برداشت در",
+          signal_mines_safe: "۵ خانه امن فاش شد",
+          signal_penalty_zone: "منطقه هدف",
+          signal_apple_col: "ستون را انتخاب کنید",
+          signal_chicken_pick: "به طور امن",
+          signal_chicken_times: "بار انتخاب کنید",
+          ai_signal: "سیگنال هوش مصنوعی:",
+          loading: "// در حال بارگذاری..."
         },
         km: {
           select_language: "// ជ្រើសរើសភាសា //",
@@ -392,7 +532,42 @@
           deposit_btn: "ដាក់ប្រាក់នៅ 1XBET",
           verify_msg: "ផ្ញើសារទៅ Admin ដើម្បីទទួលបានលេខកូដបន្ទាប់ពីដាក់ប្រាក់:",
           verify_btn: "ផ្ទៀងផ្ទាត់លេខកូដ",
-          access_placeholder: "លេខកូដចូល"
+          access_placeholder: "លេខកូដចូល",
+          streak: "ឈ្នះបន្តបន្ទាប់:",
+          wins: "ដង",
+          ping: "PING:",
+          admin_panel: "ផ្ទាំងគ្រប់គ្រង",
+          game_aviator: "អ្នកទស្សន៍ទាយ Aviator",
+          game_mines: "អ្នកទស្សន៍ទាយ Mines",
+          game_penalty: "អ្នកទស្សន៍ទាយ Penalty",
+          game_apple: "អ្នកទស្សន៍ទាយ Apple",
+          game_chicken: "អ្នកទស្សន៍ទាយ Chicken",
+          title_aviator: "អ្នកទស្សន៍ទាយ AVIATOR AI",
+          title_mines: "អ្នកទស្សន៍ទាយ MINES AI",
+          title_penalty: "អ្នកទស្សន៍ទាយ PENALTY",
+          title_apple: "អ្នកទស្សន៍ទាយ APPLE",
+          title_chicken: "យុទ្ធសាស្រ្ត CHICKEN",
+          grid_size: "ទំហំក្រឡាចត្រង្គ",
+          mine_count_label: "ចំនួនមីន",
+          intercepting: "// កំពុងស្ទាក់ចាប់ 1XBET API //",
+          scan_status_init: "កំពុងរំលងជញ្ជាំងភ្លើង...",
+          confidence: "ទំនុកចិត្ត",
+          expires_in: "ផុតកំណត់ក្នុង",
+          signal_expired: "// សញ្ញាផុតកំណត់ //",
+          window_closed: "បិទវិនដូរប្រហោង។",
+          step_1: "បង្កើតផ្លូវសុវត្ថិភាព...",
+          step_2: "ស្ទាក់ចាប់ហាសហ្គេមបន្តផ្ទាល់...",
+          step_3: "អនុវត្តបណ្ដាញសរសៃប្រសាទ...",
+          step_4: "សញ្ញាត្រូវបំបែកបានជោគជ័យ!",
+          scan_success: "> ✅ ជោគជ័យ៖ សញ្ញាទទួលបាន។",
+          signal_aviator: "សញ្ញា៖ ដកប្រាក់នៅ",
+          signal_mines_safe: "ក្រឡាសុវត្ថិភាព ៥ ត្រូវបានបង្ហាញ",
+          signal_penalty_zone: "តំបន់គោលដៅ",
+          signal_apple_col: "ជ្រើសរើសជួរឈរ",
+          signal_chicken_pick: "ជ្រើសរើសដោយសុវត្ថិភាព",
+          signal_chicken_times: "ដង",
+          ai_signal: "សញ្ញា AI៖",
+          loading: "// កំពុងផ្ទុក..."
         }
       };
 
@@ -460,6 +635,11 @@
       updateStreak();
 
       // Countdown Timer Logic
+      function getI18n(key) {
+        const lang = localStorage.getItem('ai_app_lang') || 'en';
+        return i18n[lang]?.[key] || i18n['en'][key];
+      }
+
       let activeTimerInterval;
       function showSignalWithTimer(elementId, mainText) {
           clearInterval(activeTimerInterval);
@@ -468,7 +648,9 @@
           const confidence = (95 + Math.random() * 4).toFixed(1);
           
           function render() {
-              el.innerHTML = `${mainText} <br/><span class="text-xs sm:text-sm text-gray-400 mt-2 inline-block bg-black/50 px-3 py-1 rounded border border-gray-800">Confidence: <span class="text-green-400">${confidence}%</span> <span class="mx-2">|</span> <i class="fas fa-clock mr-1"></i> <span class="text-red-500 font-bold">Expires in: ${timeLeft}s</span></span>`;
+              const confText = getI18n('confidence');
+              const expText = getI18n('expires_in');
+              el.innerHTML = `${mainText} <br/><span class="text-xs sm:text-sm text-gray-400 mt-2 inline-block bg-black/50 px-3 py-1 rounded border border-gray-800">${confText}: <span class="text-green-400">${confidence}%</span> <span class="mx-2">|</span> <i class="fas fa-clock mr-1"></i> <span class="text-red-500 font-bold">${expText}: ${timeLeft}s</span></span>`;
           }
           render();
           
@@ -476,7 +658,9 @@
               timeLeft--;
               if(timeLeft <= 0) {
                   clearInterval(activeTimerInterval);
-                  el.innerHTML = `<span class="text-red-500 font-bold border border-red-500 px-3 py-1 bg-red-900/20 rounded shadow-[0_0_10px_rgba(239,68,68,0.5)]">// SIGNAL EXPIRED //</span><br/><span class="text-xs text-gray-500 mt-2 block">The vulnerability window closed.</span>`;
+                  const expSigText = getI18n('signal_expired');
+                  const closedText = getI18n('window_closed');
+                  el.innerHTML = `<span class="text-red-500 font-bold border border-red-500 px-3 py-1 bg-red-900/20 rounded shadow-[0_0_10px_rgba(239,68,68,0.5)]">${expSigText}</span><br/><span class="text-xs text-gray-500 mt-2 block">${closedText}</span>`;
               } else {
                   render();
               }
@@ -535,10 +719,10 @@
           progressBar.style.width = '0%';
           
           const steps = [
-              "Establishing secure port tunnel...",
-              "Intercepting live game hashes...",
-              "Applying neural network logic...",
-              "Signal successfully cracked!"
+              getI18n('step_1'),
+              getI18n('step_2'),
+              getI18n('step_3'),
+              getI18n('step_4')
           ];
           
           let progress = 0;
@@ -566,7 +750,7 @@
                       updateStreak();
                       
                       const p = document.createElement('p');
-                      p.textContent = `> ✅ SUCCESS: Vulnerability exploited. Signal Acquired.`;
+                      p.textContent = getI18n('scan_success');
                       p.className = "text-green-500 font-bold drop-shadow-[0_0_5px_rgba(57,255,20,0.5)]";
                       outputDiv.appendChild(p);
                       
@@ -581,7 +765,7 @@
           if(this.disabled) return;
           executeWithAnalysis(this, document.getElementById("aviator-console"), () => {
               const target = (1.1 + Math.random() * 0.89).toFixed(2);
-              showSignalWithTimer("aviator-bet-suggestion", `Signal: Cash out at <span class="text-white text-2xl drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">${target}x</span>`);
+              showSignalWithTimer("aviator-bet-suggestion", `${getI18n('signal_aviator')} <span class="text-white text-2xl drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">${target}x</span>`);
               document.getElementById("aviator-multiplier").textContent = `x${target}`;
               this.classList.add("hidden");
               document.getElementById("aviator-get-another-btn").classList.remove("hidden");
@@ -613,7 +797,7 @@
                   cell.className = "mine-cell flex items-center justify-center " + (safe.includes(i) ? "safe" : "");
                   container.appendChild(cell);
               }
-              showSignalWithTimer("mines-bet-suggestion", `AI Signal: <span class="text-white">5 Safe Cells Revealed</span>`);
+              showSignalWithTimer("mines-bet-suggestion", `${getI18n('ai_signal')} <span class="text-white">${getI18n('signal_mines_safe')}</span>`);
               this.classList.add("hidden");
               document.getElementById("mines-get-another-btn").classList.remove("hidden");
           });
@@ -635,7 +819,7 @@
               const r = Math.floor(Math.random()*5)+1;
               const z = document.querySelector(`[data-zone="${r}"]`);
               if(z) z.classList.add("highlight", "scale-110");
-              showSignalWithTimer("penalty-bet-suggestion", `AI Signal: Target Zone <span class="text-white text-xl">${r}</span>`);
+              showSignalWithTimer("penalty-bet-suggestion", `${getI18n('ai_signal')} ${getI18n('signal_penalty_zone')} <span class="text-white text-xl">${r}</span>`);
               this.classList.add("hidden");
               document.getElementById("penalty-start-new-game-btn").classList.remove("hidden");
           });
@@ -657,7 +841,7 @@
               const d = document.getElementById("apple-signal-display");
               d.textContent = r;
               d.classList.add("text-green-500", "shadow-lg");
-              showSignalWithTimer("apple-bet-suggestion", `Select column <span class="text-white text-xl">${r}</span>`);
+              showSignalWithTimer("apple-bet-suggestion", `${getI18n('signal_apple_col')} <span class="text-white text-xl">${r}</span>`);
               this.classList.add("hidden");
               document.getElementById("apple-start-new-game-btn").classList.remove("hidden");
           });
@@ -676,7 +860,7 @@
           if(this.disabled) return;
           executeWithAnalysis(this, document.getElementById("chicken-console"), () => {
               const count = Math.floor(Math.random()*8)+1;
-              showSignalWithTimer("chicken-bet-suggestion", `AI Signal: Safely pick <span class="text-white text-xl">${count}</span> times`);
+              showSignalWithTimer("chicken-bet-suggestion", `${getI18n('ai_signal')} ${getI18n('signal_chicken_pick')} <span class="text-white text-xl">${count}</span> ${getI18n('signal_chicken_times')}`);
               this.classList.add("hidden");
               document.getElementById("chicken-get-another-btn").classList.remove("hidden");
           });
